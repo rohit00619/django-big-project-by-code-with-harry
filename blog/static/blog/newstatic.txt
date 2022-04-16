@@ -1,0 +1,1 @@
+Hi this a static file for blog

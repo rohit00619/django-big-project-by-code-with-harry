@@ -1,0 +1,70 @@
+{% extends 'shop/basic.html' %}
+{% block css %}
+          .col-md-3
+          {
+          display: inline-block;
+          margin-left:-4px;
+          }
+          .carousel-indicators .active {
+          background-color: blue;
+            }
+          .col-md-3 img{
+          width:auto;
+          max-height:255px;
+          object-fit:contain
+          }
+          body .carousel-indicator li{
+          background-color: blue;
+          }
+          body .carousel-indicators{
+          bottom: 0;
+          }
+          body .carousel-control-prev-icon,
+          body .carousel-control-next-icon{
+          background-color: blue;
+          }
+          .carousel-control-prev,
+          .carousel-control-next{
+           top:auto;
+           bottom:auto;
+            }
+           body .no-padding{
+           padding-left: 0,
+           padding-right: 0;
+           }
+           .addresses{
+            padding-left:100px
+            padding-top:100px
+            }
+{% endblock%}
+
+
+
+<body>
+  {% load static %}
+{% block body %}
+
+   <h2>
+       Our Stores Across the Country
+   </h2>
+  {% for allpro in Stores %}
+      <!--Stores cards dynamic -->
+      <div class="card-group row row-cols-1 row-cols-md-2 g-4"  >
+  <div class="card" style="max-width:40%; margin-left:30%;margin-right:30%; margin-bottom:20px;" >
+    <img src='/media/{{allpro.image}}' class="card-img-top" alt="...">
+    <div class="card-body">
+     <h4 class="card-title">{{allpro.store_name}}</h4>
+    <h7 class="card-text">Address: {{allpro.address}}, {{allpro.city}}, </h7>
+        <h7 class="card-text">{{allpro.state}}, {{allpro.country}}</h7>
+        <p class="card-text">Contact Number: {{allpro.contactnumber}}</p>
+    </div>
+  </div>
+</div>
+
+  <!--this is where i am experimenting -->
+
+
+
+  {% endfor %}
+{% endblock %}
+</body>

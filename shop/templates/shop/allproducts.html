@@ -1,0 +1,18 @@
+{% extends 'shop/basic.html' %}
+{% endblock%}
+
+
+
+<body>
+  {% load static %}
+{% block body %}
+
+   <h2>
+       All Products
+   </h2>
+  {% for allpro in Products %}
+  <p>{{allpro.product_name}}</p>
+  <p>{{allpro.price}}</p>
+  {% endfor %}
+{% endblock %}
+</body>
